@@ -60,3 +60,8 @@ The scripts assume that C:\workspace is the working directory.
     * C:\workspace\dependencies
 * Copy the scripts from the appropriate branch into C:\workspace
 * Using Git shell (or any other command prompt) run clean_build_arrayfire.bat.
+
+## License
+* The scripts are available unser ArrayFire's BSD 3-clause license.
+* The pre-built dependencies shippied in arrayfire_deps.zip are licensed under
+  their own licenses.
