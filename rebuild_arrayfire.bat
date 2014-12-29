@@ -29,7 +29,7 @@ if "%CPU%"=="ON" (
 )
 if "%CUDA%"=="ON" (
     echo "Running CUDA CMake Configuration"
-    if "%CUDA_COMPUTE%"=="" (
+    if %CUDA_COMPUTE%=="" (
         %CMAKE% .. -DBUILD_CUDA:STRING=ON -DBOOST_INCLUDEDIR:STRING="%DEPS_DIR%/boost_1_56_0"
     ) else (
         %CMAKE% .. -DBUILD_CUDA:STRING=ON -DCUDA_COMPUTE_CAPABILITY:STRING=%CUDA_COMPUTE% -DBOOST_INCLUDEDIR:STRING="%DEPS_DIR%/boost_1_56_0"
