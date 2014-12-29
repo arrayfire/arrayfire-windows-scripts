@@ -17,31 +17,38 @@ This repository contains sample batch scripts for building ArrayFire on Windows.
     * Community edition is free for Open Source projects
 * GitHub for Windows preffered. Regular command prompt will also work.
 * SilkSVN or other Subversion tool
-* CMake >= 3.0
+* CMake
 
 ## How to use the scripts
-The script files assume all softwares are installed in their default
-locations and that C:\workspace is the workspace for building ArrayFire.
+### common.bat
+This file contains common macros. This is probably the only file that you will need to change. The variables are explained below
 
-Checkout the branch which has the permutation of the backends you wish to
-build.
+Variable          | Description
+------------------|------------------
+WORKSPACE         | Working directory
+AF_DIR            | ArrayFire source code directory
+AF_INSTALL_PATH   | Where ArrayFire include and library files are installed. Can be relative with respect to AF_DIR/build or can be an absolute path
+DEPS_DIR          | Where the dependencies are extracted from the `arrayfire_deps.zip` file
+CPU, CUDA, OPENCL | To select which backends to use, set them to ON. To deselect, set them to OFF
+CUDA_COMPUTE      | If building on a remote machine which cannot run CUDA, set this to the appropriate compute capability.
+THREADS           | No. of logical processors to dedicate to parallel builds
+MSBUILD           | MSBuild.exe file from Visual Studio 2013
+GIT_EXE           | Git executable
+CMAKE             | CMake executable
+CMAKE_GENERATOR   | Visual Studio 2013 Win64 generator option
+CTEST             | ctest executable
 
-In all scripts, change the C:\workspace path to your build path.
+### rebuild_arrayfire.bat
+* Builds a clean version of ArrayFire. Deletes the build directory, runs cmake, builds and installs (to AF_INSTALL_PATH) ArrayFire.
 
-### clean_build_arrayfire.bat
-* Builds a clean version of ArrayFire. Deletes the build directory, runs cmake, builds and installs (to build/package) ArrayFire.
-* Set THREADS to number of logical processors to dedicate to the build.
-* Set GIT_EXE to the git executable.
-
-### quick_build_arrayfire.bat
-* Rebuilds ArrayFire. This is not a clean build.
-* Builds and installs ArrayFire to the install direcoty set in clean_build_arrayfire.bat
+### build_arrayfire.bat
+* Builds ArrayFire. This is not a clean build.
+* Builds and installs ArrayFire to the install directory set in rebuild_arrayfire.bat
 
 ### run_test.bat
 * Runs files from tests.
 * Usage: .\run_test.bat expr device
-* All tests that match the expression are run on the device. Both are
-  optional.
+* All tests that match the expression expr are run on the device. Both are optional.
   * Not passing expr runs all tests and not passing device runs it on the device 0.
 
 ### run_example.bat
@@ -50,16 +57,21 @@ In all scripts, change the C:\workspace path to your build path.
 * executable must be name_backend.
 * Device is optional (default 0)
 
+### build_clMath.bat
+* This file is not used when building ArrayFire using the pre-built libraries.
+* This file builds the clBLAS and clFFT libraries from source.
+
 ## Building ArrayFire
-The scripts assume that C:\workspace is the working directory.
-* Clone arrayfire and Boost.Compute (only if building OpenCL)
+The example below assume that C:\workspace is the working directory.
+* Clone ArrayFire and Boost.Compute (only if building OpenCL)
     * C:\workspace\arrayfire is the ArrayFire source code
+    * C:\workspace\compute is the Boost.Compute source code
 * Extract the arrayfire_deps.zip into C:\workspace. This should create:
     * C:\workspace\clBLAS
-    * C:\workspace\clBLAS
+    * C:\workspace\clFFT
     * C:\workspace\dependencies
-* Copy the scripts from the appropriate branch into C:\workspace
-* Using Git shell (or any other command prompt) run clean_build_arrayfire.bat.
+* Copy the scripts from this repo into C:\workspace
+* Using Git powershell (or any other command prompt) run rebuild_arrayfire.bat.
 
 ## License
 * The scripts are available unser ArrayFire's BSD 3-clause license.
