@@ -49,9 +49,13 @@ CTEST             | ctest executable
 
 ### run_test.bat
 * Runs files from tests.
-* Usage: .\run_test.bat expr device
+* Usage: .\run_test.bat expr CUDA=cuda_device OPENCL=cl_devlce
 * All tests that match the expression expr are run on the device. Both are optional.
-  * Not passing expr runs all tests and not passing device runs it on the device 0.
+    * Pass . or _ as expr to run all tests.
+    * To run all tests from one backend, pass cpu, cuda or opencl as expr
+* The devices are optional. Not passing would make it device 0
+* Example: .\run_test transpose CUDA=1 OPENCL=0
+    * This will run all tests for transpose (cpu/cuda/opencl) on CUDA device 1 and OpenCL device 0.
 
 ### run_example.bat
 * Runs files from examples.
