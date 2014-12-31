@@ -31,6 +31,8 @@ AF_INSTALL_PATH   | Where ArrayFire include and library files are installed. Can
 DEPS_DIR          | Where the dependencies are extracted from the `arrayfire_deps.zip` file
 CPU, CUDA, OPENCL | To select which backends to use, set them to ON. To deselect, set them to OFF
 CUDA_COMPUTE      | If building on a remote machine which cannot run CUDA, set this to the appropriate compute capability.
+TESTS             | ON to build tests, OFF to not build tests
+EXAMPLES          | ON to build examples, OFF to not build examples
 THREADS           | No. of logical processors to dedicate to parallel builds
 MSBUILD           | MSBuild.exe file from Visual Studio 2013
 GIT_EXE           | Git executable
