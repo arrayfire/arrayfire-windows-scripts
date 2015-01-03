@@ -5,7 +5,7 @@ This repository contains sample batch scripts for building ArrayFire on Windows.
 
 ## Source Requirements
 * [ArrayFire](https://github.com/arrayfire/arrayfire)
-* [ArrayFire Windows Dependencies](https://drive.google.com/file/d/0ByGyhTmHFow9OHhEcGZJcmZnc3M/view?usp=sharing). Includes pre-built:
+* [ArrayFire Windows Dependencies](http://ci.arrayfire.org/userContent/arrayfire_deps.zip). Includes pre-built:
     * clBLAS, clFFT
     * FreeImage 3.16
     * OpenBLAS
