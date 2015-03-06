@@ -48,7 +48,7 @@ CTEST             | ctest executable
 * Builds and installs ArrayFire to the install directory set in rebuild_arrayfire.bat
 
 ### run_test.bat
-* Runs files from tests.
+* Runs one or more files from tests.
 * Usage: .\run_test.bat expr CUDA=cuda_device OPENCL=cl_devlce
 * All tests that match the expression expr are run on the device. Both are optional.
     * Pass . or _ as expr to run all tests.
@@ -57,6 +57,14 @@ CTEST             | ctest executable
 * Example: .\run_test transpose CUDA=1 OPENCL=0
     * This will run all tests for transpose (cpu/cuda/opencl) on CUDA device 1 and OpenCL device 0.
 
+### run_single_test.bat
+* Runs single test.
+* Usage: .\run_single_test.bat test_backend CUDA=cuda_device OPENCL=cl_devlce
+* The test name must be an exact match
+* The devices are optional. Not passing would make it device 0
+* Example: .\run_test transpose_cuda
+    * This will run the transpose_cuda test only.
+	
 ### run_example.bat
 * Runs files from examples.
 * Usage: .\run_example.bat executable device
