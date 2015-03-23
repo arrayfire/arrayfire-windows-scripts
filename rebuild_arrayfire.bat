@@ -9,7 +9,6 @@ cd %AF_DIR%
 echo "Cloning submodules"
 "%GIT_EXE%" submodule init
 "%GIT_EXE%" submodule update
-"%GIT_EXE%" submodule foreach git pull origin master
 
 echo "Cleaning build directory"
 REM Clean build space
