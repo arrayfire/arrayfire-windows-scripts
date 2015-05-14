@@ -6,9 +6,7 @@ call common.bat
 SET OLDDIR=%CD%
 cd %AF_DIR%
 
-if "%1"=="" (
-	REM DO NOTHING
-) else (
+if "%1"=="clean" (
 	REM CLEAN BUILD
 	echo "Cloning submodules"
 	"%GIT_EXE%" submodule init
