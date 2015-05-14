@@ -12,7 +12,7 @@ This repository contains sample batch scripts for building ArrayFire on Windows.
 ## Source Requirements
 * [ArrayFire](https://github.com/arrayfire/arrayfire)
 * [ArrayFire Windows Dependencies](http://ci.arrayfire.org/userContent/arrayfire_deps.zip). Includes pre-built:
-    * FreeImage 3.16 (Under [FIPL v1.0](http://freeimage.sourceforge.net/freeimage-license.txt)]
+    * FreeImage 3.16 (Under [FIPL v1.0](http://freeimage.sourceforge.net/freeimage-license.txt))
     * LAPACKE (Under [BSD 3-Clause](http://www.netlib.org/lapack/explore-html/d8/d65/lapacke_2_l_i_c_e_n_s_e_source.html))
     * FFTW 3.3.4 (Under [GNU GPL v2](http://www.fftw.org/fftw2_doc/fftw_8.html))
     * Boost 1.56 Header Files (Under [Boost Software License v1.0](http://www.boost.org/users/license.html))
