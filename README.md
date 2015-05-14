@@ -2,6 +2,13 @@ Build ArrayFire on Windows
 ==========================
 This repository contains sample batch scripts for building ArrayFire on Windows.
 
+##Index
+* [Source Requirements](#source-requirements)
+* [Software Requirements](#software-requirements)
+* [Using Scripts](#how-to-use-the-scripts)
+* [Building ArrayFire](#building-arrayfire)
+* [Using Intel MKL](#using-intel-mkl)
+
 ## Source Requirements
 * [ArrayFire](https://github.com/arrayfire/arrayfire)
 * [ArrayFire Windows Dependencies](http://ci.arrayfire.org/userContent/arrayfire_deps.zip). Includes pre-built:
