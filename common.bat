@@ -33,18 +33,11 @@ REM Note: ACML 6.1 has known failure issues
 SET CPU_FFT_TYPE=FFTW
 
 REM CPU_BLAS_TYPE Can be LAPACKE, MKL
+REM Ideally, BLAS_TYPE and LAPACK_TYPE should be the same
 SET CPU_BLAS_TYPE=LAPACKE
 
 REM CPU_LAPACK_TYPE Can be LAPACKE, MKL
 SET CPU_LAPACK_TYPE=LAPACKE
-
-REM TOOLS CONFIGURATION
-SET THREADS=8
-SET MSBUILD="C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe" /m:%THREADS%
-SET GIT_EXE="git.exe"
-SET CMAKE="C:\Program Files (x86)\CMake\bin\cmake"
-SET CMAKE_GENERATOR=-G "Visual Studio 12 2013 Win64"
-SET CTEST="C:\Program Files (x86)\CMake\bin\ctest.exe" --force-new-ctest-process --output-on-failure
 
 REM PATH SETTING TO RUN EXECUTABLES
 SET FI_DIR=%DEPS_DIR%/freeimage-3.17.0_x64
@@ -109,3 +102,11 @@ SET GRAPHICS_OPTIONS=-DGLEW_INCLUDE_DIR:STRING="%DEPS_DIR%/glew/include" -DGLEWm
 if "%CUDA%"=="ON" (
     SET PATH_EXT=%PATH_EXT%%CUDA_PATH%\bin;%CUDA_PATH%\nvvm\bin;
 )
+
+REM TOOLS CONFIGURATION
+SET THREADS=8
+SET MSBUILD="C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe" /m:%THREADS%
+SET GIT_EXE="git.exe"
+SET CMAKE="C:\Program Files (x86)\CMake\bin\cmake"
+SET CMAKE_GENERATOR=-G "Visual Studio 12 2013 Win64"
+SET CTEST="C:\Program Files (x86)\CMake\bin\ctest.exe" --force-new-ctest-process --output-on-failure
