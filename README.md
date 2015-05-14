@@ -36,7 +36,6 @@ Variable (in common.bat)| Description
 ------------------------|------------------------
 WORKSPACE         	| Working directory
 AF_DIR            	| ArrayFire source code directory
-BUILD_TYPE        	| Can be Release (Default), Debug, RelWithDebWinfo, MinSizeRel
 DEPS_DIR          	| Where the dependencies are extracted from the `arrayfire_deps.zip` file. Ideally workspace/dependencies
 CPU, CUDA, OPENCL 	| To select which backends to use, set them to ON. To deselect, set them to OFF
 TESTS             	| ON to build tests, OFF to not build tests
@@ -46,8 +45,8 @@ EXAMPLES          	| ON to build examples, OFF to not build examples
 Variable (in common.bat)| Description
 ------------------------|------------------------
 BUILD_DIR         	| Build directory relative to AF_DIR
-BUILD_TYPE        	| Can be Release (Default), Debug, RelWithDebWinfo, MinSizeRel
-CUDA_COMPUTE      	| If building on a remote machine which cannot run CUDA, set this to the appropriate compute capability
+BUILD_TYPE        	| Can be Release (Default), Debug, RelWithDebInfo, MinSizeRel
+CUDA_COMPUTE      	| If building on a remote machine which cannot run CUDA, set this to the appropriate compute capability (20, 30, 32, 35, 50, 52)
 TESTS             	| ON to build tests, OFF to not build tests
 EXAMPLES          	| ON to build examples, OFF to not build examples
 
