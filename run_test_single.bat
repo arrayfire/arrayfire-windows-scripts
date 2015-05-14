@@ -5,7 +5,7 @@ call common.bat
 
 SET OLDDIR=%CD%
 
-cd %AF_DIR%\build
+cd %AF_DIR%\%BUILD_DIR%
 
 SET PATH=%PATH%;%PATH_EXT%;
 
@@ -48,7 +48,7 @@ if %AF_OPENCL_DEFAULT_DEVICE% LSS 0 (
     SET AF_OPENCL_DEFAULT_DEVICE=0
 )
 
-.\test\Release\%1
+.\test\%BUILD_TYPE%\%1
 
 cd %OLDDIR%
 goto end

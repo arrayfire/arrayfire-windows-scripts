@@ -5,10 +5,10 @@ call common.bat
 
 SET OLDDIR=%CD%
 
-cd %AF_DIR%\build
+cd %AF_DIR%\%BUILD_DIR%
 %CMAKE% ..
 REM Build
-%MSBUILD% /p:Configuration=Release ArrayFire.sln
-%MSBUILD% /p:Configuration=Release INSTALL.vcxproj
+%MSBUILD% /p:Configuration=%BUILD_TYPE% ArrayFire.sln
+%MSBUILD% /p:Configuration=%BUILD_TYPE% INSTALL.vcxproj
 
 cd %OLDDIR%

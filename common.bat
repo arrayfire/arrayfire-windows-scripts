@@ -6,6 +6,10 @@ REM AF_INSTALL_PATH is where ArrayFire files are installed.
 REM AF_INSTALL_PATH can be relative path from AF_DIR/build or absolute path
 SET AF_INSTALL_PATH="package"
 SET DEPS_DIR=%WORKSPACE%/dependencies
+REM Relative to AF_DIR
+SET BUILD_DIR=build
+REM BUILD_TYPE can be Release, Debug, RelWithDebWinfo, MinSizeRel
+SET BUILD_TYPE=Release
 
 REM ARRAYFIRE BUILD OPTIONS
 REM SELECT WHICH BACKENDS TO BUILD BY SETTING THEM TO ON
@@ -30,13 +34,15 @@ SET CMAKE_GENERATOR=-G "Visual Studio 12 2013 Win64"
 SET CTEST="C:\Program Files (x86)\CMake\bin\ctest.exe" --force-new-ctest-process --output-on-failure
 
 REM PATH SETTING TO RUN EXECUTABLES
-SET PATH_EXT=%AF_DIR%\build\package\lib;%DEPS_DIR%\freeimage-3.16.0_x64;%DEPS_DIR%\glew\lib;%DEPS_DIR%\glfw\lib;
+SET PATH_EXT=%AF_DIR%\%BUILD_DIR%\package\lib;%DEPS_DIR%\glew\lib;%DEPS_DIR%\glfw\lib;
+REM Uncomment line below only if using dynamic free image
+REM SET PATH_EXT=%PATH_EXT%%DEPS_DIR%\freeimage-3.16.0_x64;
 if "%CPU%"=="ON" (
-    SET PATH_EXT=%PATH_EXT%;%DEPS_DIR%\fftw-3.3.4;%DEPS_DIR%\OpenBLAS\package\bin;
+    SET PATH_EXT=%PATH_EXT%%DEPS_DIR%\mkl\bin;
 )
 if "%CUDA%"=="ON" (
-    SET PATH_EXT=%PATH_EXT%;%CUDA_PATH%\bin;%CUDA_PATH%\nvvm\bin;
+    SET PATH_EXT=%PATH_EXT%%CUDA_PATH%\bin;%CUDA_PATH%\nvvm\bin;
 )
 if "%OPENCL%"=="ON" (
-    SET PATH_EXT=%PATH_EXT%;%WORKSPACE%\clBLAS\build\package\bin;%WORKSPACE%\clFFT\build\package\bin;
+    SET PATH_EXT=%PATH_EXT%%DEPS_DIR%\mkl\bin;
 )
