@@ -12,10 +12,12 @@ This repository contains sample batch scripts for building ArrayFire on Windows.
 ## Source Requirements
 * [ArrayFire](https://github.com/arrayfire/arrayfire)
 * [ArrayFire Windows Dependencies](http://ci.arrayfire.org/userContent/arrayfire_deps.zip). Includes pre-built:
-    * FreeImage 3.16 ([Under FIPL v1.0](http://freeimage.sourceforge.net/freeimage-license.txt)]
-    * LAPACKE ([Under BSD 3-Clause](http://www.netlib.org/lapack/explore-html/d8/d65/lapacke_2_l_i_c_e_n_s_e_source.html))
-    * FFTW 3.3.4 ([Under GNU GPL v2](http://www.fftw.org/fftw2_doc/fftw_8.html))
-    * Boost 1.56 Header Files ([Under Boost Software License v1.0](http://www.boost.org/users/license.html))
+    * FreeImage 3.16 (Under [FIPL v1.0](http://freeimage.sourceforge.net/freeimage-license.txt)]
+    * LAPACKE (Under [BSD 3-Clause](http://www.netlib.org/lapack/explore-html/d8/d65/lapacke_2_l_i_c_e_n_s_e_source.html))
+    * FFTW 3.3.4 (Under [GNU GPL v2](http://www.fftw.org/fftw2_doc/fftw_8.html))
+    * Boost 1.56 Header Files (Under [Boost Software License v1.0](http://www.boost.org/users/license.html))
+    * GLEW (Under [Modified BSD](http://glew.sourceforge.net/glew.txt), [Mesa](http://glew.sourceforge.net/mesa.txt), [Khronos](http://glew.sourceforge.net/khronos.txt) Licenses)
+    * GLFW (Under [zlip/png](http://www.glfw.org/license.html))
 * Other requirements as stated in the ArrayFire repo (CUDA, OpenCL SDKs etc).
 * ACML 6.1 (ifort64) is an alternate for FFTW. It can be downloaded from [here](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/). Make sure you place it in the dependencies directory. The path should be `/dependencies_dir/acml/ifort64`.
 
