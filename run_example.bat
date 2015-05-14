@@ -7,7 +7,7 @@ if "%1"=="" goto error
 
 SET OLDDIR=%CD%
 
-cd %AF_DIR%\build
+cd %AF_DIR%\%BUILD_DIR%
 SET PATH=%PATH%;%PATH_EXT%;
 
 if "%2"=="" (
@@ -16,7 +16,7 @@ if "%2"=="" (
     SET DEVICE=%2
 )
 
-examples\Release\%1.exe %DEVICE%
+examples\%BUILD_TYPE%\%1.exe %DEVICE%
 
 cd %OLDDIR%
 goto end
