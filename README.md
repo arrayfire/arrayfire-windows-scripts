@@ -139,6 +139,7 @@ If you have Intel MKL available, you can use it to build ArrayFire. To setup MKL
 * Copy `fftw3.h, mkl_blas.h, mkl_cblas.h, mkl_lapacke.h, mkl_types.h` into mkl/include
 * Copy `mkl_core_dll.lib, mkl_rt.lib` into mkl/lib
 * Copy `mkl_core.dll, mkl_rt.dll, mkl_intel_thread.dll, mkl_rt.dll` into mkl/bin
+
 This will allow you to use the default setup in the build scripts. You may choose not to copy these, but then will have to configure common.bat to set it up correctly.
 
 ## License
