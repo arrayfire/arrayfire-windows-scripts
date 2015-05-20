@@ -101,10 +101,10 @@ CTEST                   | ctest executable
 * The devices are optional. Not passing would make it device 0
 * Example: .\run_test transpose_cuda
     * This will run the transpose_cuda test only.
-	
+
 #### run_example.bat
 * Runs files from examples.
-* Usage: .\run_example.bat executable device
+* Usage: .\run_example.bat example_dir executable device
 * executable must be name_backend.
 * Device is optional (default 0)
 
