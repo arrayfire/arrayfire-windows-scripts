@@ -34,21 +34,22 @@ This file contains common macros. This is probably the only file that you will n
 #### Variables you will likely need to change
 Variable (in common.bat)| Description
 ------------------------|------------------------
-WORKSPACE         	| Working directory
-AF_DIR            	| ArrayFire source code directory
-DEPS_DIR          	| Where the dependencies are extracted from the `arrayfire_deps.zip` file. Ideally workspace/dependencies
-CPU, CUDA, OPENCL 	| To select which backends to use, set them to ON. To deselect, set them to OFF
-TESTS             	| ON to build tests, OFF to not build tests
-EXAMPLES          	| ON to build examples, OFF to not build examples
+WORKSPACE           | Working directory
+AF_DIR              | ArrayFire source code directory
+DEPS_DIR            | Where the dependencies are extracted from the `arrayfire_deps.zip` file. Ideally workspace/dependencies
+CPU, CUDA, OPENCL   | To select which backends to use, set them to ON. To deselect, set them to OFF
+GRAPHICS            | Enable or disable building graphics. Default is off
+TESTS               | ON to build tests, OFF to not build tests
+EXAMPLES            | ON to build examples, OFF to not build examples
 
 #### Variables you may want to change but do not need to
 Variable (in common.bat)| Description
 ------------------------|------------------------
-BUILD_DIR         	| Build directory relative to AF_DIR
-BUILD_TYPE        	| Can be Release (Default), Debug, RelWithDebInfo, MinSizeRel
-CUDA_COMPUTE      	| If building on a remote machine which cannot run CUDA, set this to the appropriate compute capability (20, 30, 32, 35, 50, 52)
-TESTS             	| ON to build tests, OFF to not build tests
-EXAMPLES          	| ON to build examples, OFF to not build examples
+BUILD_DIR           | Build directory relative to AF_DIR
+BUILD_TYPE          | Can be Release (Default), Debug, RelWithDebInfo, MinSizeRel
+CUDA_COMPUTE        | If building on a remote machine which cannot run CUDA, set this to the appropriate compute capability (20, 30, 32, 35, 50, 52)
+TESTS               | ON to build tests, OFF to not build tests
+EXAMPLES            | ON to build examples, OFF to not build examples
 
 #### Dependency Variables - Do not need to be changed
 Variable (in common.bat)| Description
@@ -61,6 +62,9 @@ FFTW_DIR                | FFTW directory. Default is set to be the one from the 
 ACML_DIR                | ACML directory. Download and place ACML here.
 MKL_DIR                 | MKL directory. Create dependency/mkl/(include/lib/dll). See notes below.
 LAPACKE_DIR             | LAPACKE directory. Default is set to be the one from the dependency directory
+GLFW_DIR                | GLFW directory. Default is set to be the one from the dependency directory
+GLEW_DIR                | GLEW directory. Default is set to be the one from the dependency directory
+GLEWmx_STATIC           | Set to ON to use static library, off for dynamic library.
 
 #### Variables you most likely will not need to change
 These are system executables. As long as they are installed to the default paths, they should work fine.
