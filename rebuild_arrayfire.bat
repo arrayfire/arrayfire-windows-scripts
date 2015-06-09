@@ -7,15 +7,15 @@ SET OLDDIR=%CD%
 cd %AF_DIR%
 
 if "%1"=="clean" (
-	REM CLEAN BUILD
-	echo "Cloning submodules"
-	"%GIT_EXE%" submodule init
-	"%GIT_EXE%" submodule update
+    REM CLEAN BUILD
+    echo "Cloning submodules"
+    "%GIT_EXE%" submodule init
+    "%GIT_EXE%" submodule update
 
-	echo "Cleaning build directory"
-	REM Clean build space
-	rmdir /Q /S build
-	mkdir build
+    echo "Cleaning build directory"
+    REM Clean build space
+    rmdir /Q /S build
+    mkdir build
 )
 
 cd build
@@ -30,11 +30,7 @@ if "%CPU%"=="ON" (
 )
 if "%CUDA%"=="ON" (
     echo "Running CUDA CMake Configuration"
-    if %CUDA_COMPUTE_DETECT%=="ON" (
-        SET CUDA_OPTIONS=-DBUILD_CUDA:BOOL=ON -DBOOST_INCLUDEDIR:STRING="%DEPS_DIR%/boost_1_56_0"
-    ) else (
-        SET CUDA_OPTIONS=-DBUILD_CUDA:BOOL=ON -DCUDA_COMPUTE_DETECT:BOOL=OFF -DCUDA_COMPUTE_20:BOOL=%CUDA_COMPUTE_20% -DCUDA_COMPUTE_30:BOOL=%CUDA_COMPUTE_30% -DCUDA_COMPUTE_32:BOOL=%CUDA_COMPUTE_32% -DCUDA_COMPUTE_50:BOOL=%CUDA_COMPUTE_50% -DCUDA_COMPUTE_52:BOOL=%CUDA_COMPUTE_52%	-DBOOST_INCLUDEDIR:STRING="%DEPS_DIR%/boost_1_56_0"
-    )
+    SET CUDA_OPTIONS=-DBUILD_CUDA:BOOL=ON -DCUDA_COMPUTE_DETECT:BOOL=%CUDA_COMPUTE_DETECT% -DCUDA_COMPUTE_20:BOOL=%CUDA_COMPUTE_20% -DCUDA_COMPUTE_30:BOOL=%CUDA_COMPUTE_30% -DCUDA_COMPUTE_32:BOOL=%CUDA_COMPUTE_32% -DCUDA_COMPUTE_50:BOOL=%CUDA_COMPUTE_50% -DCUDA_COMPUTE_52:BOOL=%CUDA_COMPUTE_52%-DBOOST_INCLUDEDIR:STRING="%DEPS_DIR%/boost_1_56_0"
 )
 if "%OPENCL%"=="ON" (
     echo "Running OpenCL CMake Configuration"

@@ -17,10 +17,14 @@ SET CPU=ON
 SET CUDA=OFF
 SET OPENCL=OFF
 SET GRAPHICS=OFF
-REM Set CUDA_COMPUTE_DETECT to OFF to disable auto detection. This is required if building remotely.
+
+REM Set CUDA_COMPUTE_DETECT to OFF to disable auto detection.
+REM If no CUDA computes are detected (for example when running on a remote machine)
+REM it will default to 20, 30, 50, unless at least one of CUDA_COMPUTE_XY (below) are set to ON
 SET CUDA_COMPUTE_DETECT=ON
+
 REM Set these to ON for adding a architecture while compiling.
-REM If CUDA_COMPUTE_DETECT is turned on, the detected compute will be enabled automatically.
+REM If CUDA_COMPUTE_DETECT is turned on, the detected computes will be enabled automatically and override any OFF computes.
 SET CUDA_COMPUTE_20=OFF
 SET CUDA_COMPUTE_30=OFF
 SET CUDA_COMPUTE_35=OFF
