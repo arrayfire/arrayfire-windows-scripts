@@ -14,11 +14,11 @@ if "%1"=="clean" (
 
     echo "Cleaning build directory"
     REM Clean build space
-    rmdir /Q /S build
-    mkdir build
+    rmdir /Q /S %BUILD_DIR%
+    mkdir %BUILD_DIR%
 )
 
-cd build
+cd %BUILD_DIR%
 
 REM Generate cmake
 SET CPU_OPTIONS=-DBUILD_CPU:BOOL=OFF
