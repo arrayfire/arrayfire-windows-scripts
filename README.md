@@ -38,6 +38,7 @@ WORKSPACE           | Working directory
 AF_DIR              | ArrayFire source code directory
 DEPS_DIR            | Where the dependencies are extracted from the `arrayfire_deps.zip` file. Ideally workspace/dependencies
 CPU, CUDA, OPENCL   | To select which backends to use, set them to ON. To deselect, set them to OFF
+UNIFIED             | To select the unified backend, set it to ON. To deselect, set it to OFF
 GRAPHICS            | Enable or disable building graphics. Default is off
 TESTS               | ON to build tests, OFF to not build tests
 EXAMPLES            | ON to build examples, OFF to not build examples
