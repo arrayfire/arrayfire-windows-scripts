@@ -8,7 +8,7 @@ SET AF_INSTALL_PATH="package"
 SET DEPS_DIR=%WORKSPACE%/dependencies
 REM Relative to AF_DIR
 SET BUILD_DIR=build
-REM BUILD_TYPE can be Release, Debug, RelWithDebWinfo, MinSizeRel
+REM BUILD_TYPE can be Release, Debug, RelWithDebInfo, MinSizeRel
 SET BUILD_TYPE=Release
 
 REM ARRAYFIRE BUILD OPTIONS
