@@ -28,8 +28,8 @@ REM %CMAKE% ../src %CMAKE_GENERATOR% -DCMAKE_BUILD_TYPE:STRING="Release" -DBUILD
 %CMAKE% ../src %CMAKE_GENERATOR% -DCMAKE_BUILD_TYPE:STRING="%BUILD_TYPE%" -DBUILD_TEST:STRING=OFF -DBUILD_EXAMPLES:STRING=ON -DCMAKE_INSTALL_PREFIX:STRING="%BUILD_TYPE%" -DBUILD_SHARED_LIBS:BOOL=ON
 
 echo "Running MSBuild"
-%CMAKE% --build ../src --target ALL_BUILD --config Release -- /v:m /clp:ErrorsOnly /m:%THREADS%
-%CMAKE% --build ../src --target INSTALL --config Release -- /v:m /clp:ErrorsOnly /m:%THREADS%
+%CMAKE% --build %CD%/../src --target ALL_BUILD --config Release -- /v:m /clp:ShowCommandLine /m:%THREADS%
+%CMAKE% --build %CD%/../src --target INSTALL --config Release -- /v:m /clp:ShowCommandLine /m:%THREADS%
 
 cd %OLDDIR%
 goto end
