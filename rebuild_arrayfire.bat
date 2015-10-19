@@ -50,7 +50,7 @@ echo "Generating CMAKE"
 
 echo "Running msbuild"
 REM Build
-%CMAKE% --build %AF_DIR%/%BUILD_DIR% --target ALL_BUILD --config %BUILD_TYPE% -- /v:m /clp:ShowCommandLine /m:%THREADS% /p:WarningLevel=1
-%CMAKE% --build %AF_DIR%/%BUILD_DIR% --target INSTALL --config %BUILD_TYPE% -- /v:m /clp:ShowCommandLine /m:%THREADS% /p:WarningLevel=1
+%CMAKE% --build %AF_DIR%/%BUILD_DIR% --target ALL_BUILD --config %BUILD_TYPE% -- /v:m /clp:ShowCommandLine;Summary /m:%THREADS% /p:WarningLevel=1
+%CMAKE% --build %AF_DIR%/%BUILD_DIR% --target INSTALL --config %BUILD_TYPE% -- /v:m /clp:ShowCommandLine;Summary /m:%THREADS% /p:WarningLevel=1
 
 cd %OLDDIR%
