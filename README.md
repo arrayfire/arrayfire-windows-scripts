@@ -74,7 +74,6 @@ These are system executables. As long as they are installed to the default paths
 Variable (in common.bat)| Description
 ------------------------|------------------------
 THREADS                 | No. of logical processors to dedicate to parallel builds
-MSBUILD                 | MSBuild.exe file from Visual Studio 2013
 GIT_EXE                 | Git executable
 CMAKE                   | CMake executable
 CMAKE_GENERATOR         | Visual Studio 2013 Win64 generator option

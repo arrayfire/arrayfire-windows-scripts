@@ -48,9 +48,9 @@ echo "Generating CMAKE"
 
 @echo off
 
-echo "Running MSBuild"
+echo "Running msbuild"
 REM Build
-%MSBUILD% /p:Configuration=%BUILD_TYPE% ArrayFire.sln
-%MSBUILD% /p:Configuration=%BUILD_TYPE% INSTALL.vcxproj
+%CMAKE% .. --build --target ALL_BUILD --config %BUILD_TYPE% -- /v:m /clp:ErrorsOnly /m:%THREADS%
+%CMAKE% .. --build --target INSTALL --config %BUILD_TYPE% -- /v:m /clp:ErrorsOnly /m:%THREADS%
 
 cd %OLDDIR%

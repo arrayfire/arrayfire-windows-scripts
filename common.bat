@@ -127,7 +127,6 @@ if "%CUDA%"=="ON" (
 
 REM TOOLS CONFIGURATION
 SET THREADS=8
-SET MSBUILD="C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe" /m:%THREADS%
 SET GIT_EXE="git.exe"
 SET CMAKE="C:\Program Files (x86)\CMake\bin\cmake"
 SET CMAKE_GENERATOR=-G "Visual Studio 12 2013 Win64"
