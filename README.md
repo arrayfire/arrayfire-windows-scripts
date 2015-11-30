@@ -134,7 +134,7 @@ git clone https://github.com/shehzan10/arrayfire-windows-scripts.git scripts
 wget http://ci.arrayfire.org/userContent/arrayfire_deps.zip
 unzip arrayfire_deps.zip
 cp -r scripts\*.bat .\
-.\rebuild_arrayfire.bat
+.\rebuild_arrayfire.bat clean ## Use clean option when running first time or when doing a clean build
 ```
 ## Using Intel MKL
 If you have Intel MKL available, you can use it to build ArrayFire. To setup MKL for ArrayFire, follow the steps:
