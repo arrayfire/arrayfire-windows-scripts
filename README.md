@@ -48,10 +48,12 @@ Variable (in common.bat)| Description
 ------------------------|------------------------
 BUILD_DIR           | Build directory relative to AF_DIR
 BUILD_TYPE          | Can be Release (Default), Debug, RelWithDebInfo, MinSizeRel
+MIN_BUILD_TIME      | This flag removes optimization flags from Release, which gives a faster compilation time at the expense of runtime performance
 CUDA_COMPUTE_DETECT | If building on a remote machine which cannot run CUDA, set this to OFF. If OFF, atleast one CUDA_COMPUTE_* must be set to ON
 CUDA_COMPUTE_(XY)   | Set these to ON for whichever computes should be added to compilation manually.
 TESTS               | ON to build tests, OFF to not build tests
 EXAMPLES            | ON to build examples, OFF to not build examples
+BUILD_NONFREE       | To build Non-Free components such as SIFT, set this to ON. These have Non-Free licenses.
 
 #### Dependency Variables - Do not need to be changed
 Variable (in common.bat)| Description
