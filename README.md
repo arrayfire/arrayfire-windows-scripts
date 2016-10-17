@@ -16,7 +16,6 @@ This repository contains sample batch scripts for building ArrayFire on Windows.
     * LAPACKE (Under [BSD 3-Clause](http://www.netlib.org/lapack/explore-html/d8/d65/lapacke_2_l_i_c_e_n_s_e_source.html))
     * FFTW 3.3.4 (Under [GNU GPL v2](http://www.fftw.org/fftw2_doc/fftw_8.html))
     * Boost 1.56 Header Files (Under [Boost Software License v1.0](http://www.boost.org/users/license.html))
-    * GLEW (Under [Modified BSD](http://glew.sourceforge.net/glew.txt), [Mesa](http://glew.sourceforge.net/mesa.txt), [Khronos](http://glew.sourceforge.net/khronos.txt) Licenses)
     * GLFW (Under [zlip/png](http://www.glfw.org/license.html))
 * Other requirements as stated in the ArrayFire repo (CUDA, OpenCL SDKs etc).
 * ACML 6.1 (ifort64) is an alternate for FFTW. It can be downloaded from [here](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/). Make sure you place it in the dependencies directory. The path should be `/dependencies_dir/acml/ifort64`.
@@ -67,8 +66,7 @@ ACML_DIR                | ACML directory. Download and place ACML here.
 MKL_DIR                 | MKL directory. Create dependency/mkl/(include/lib/dll). See notes below.
 LAPACKE_DIR             | LAPACKE directory. Default is set to be the one from the dependency directory
 GLFW_DIR                | GLFW directory. Default is set to be the one from the dependency directory
-GLEW_DIR                | GLEW directory. Default is set to be the one from the dependency directory
-GLEWmx_STATIC           | Set to ON to use static library, off for dynamic library.
+BOOST_DIR               | Boost directory (only includes required). Default is set to be the one from the dependency directory
 
 #### Variables you most likely will not need to change
 These are system executables. As long as they are installed to the default paths, they should work fine.
@@ -114,10 +112,6 @@ CTEST                   | ctest executable
 * Usage: .\run_example.bat example_dir executable device
 * executable must be name_backend.
 * Device is optional (default 0)
-
-#### build_clMath.bat
-* ArrayFire uses clBLAS and clFFT as external builds. This script is not used.
-* You can use this script to build clBLAS and clFFT externally.
 
 ## Building ArrayFire
 The example below assume that C:\workspace is the working directory. That is, WORKSPACE=C:\workspace
