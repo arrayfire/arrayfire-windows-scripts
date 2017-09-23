@@ -21,7 +21,8 @@ This repository contains sample batch scripts for building ArrayFire on Windows.
 * ACML 6.1 (ifort64) is an alternate for FFTW. It can be downloaded from [here](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/). Make sure you place it in the dependencies directory. The path should be `/dependencies_dir/acml/ifort64`.
 
 ## Software Requirements
-* Visual Studio 2013 or newer
+* Visual Studio 2015 or newer
+    * `arrayfire_deps.zip` contains GLFW and FreeImage binaries for VS2015. Other versions of Visual Studio require binaries compiled with those versions.
     * Community edition is free for Open Source projects
 * GitHub for Windows preffered. Regular command prompt will also work.
 * CMake
